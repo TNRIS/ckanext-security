@@ -3,7 +3,7 @@
 from __future__ import print_function
 import click
 
-from ckanext.security.model import db_setup, SecurityTOTP
+from ckanext.security.model import SecurityTOTP
 
 
 def get_commands():
@@ -20,9 +20,9 @@ def migrate():
     """
     Create the database table to support Time-based One Time Password login
     """
-    print("Migrating database for security")
-    db_setup()
-    print("finished tables setup for security")
+    # print("Migrating database for security")
+    # db_setup()
+    # print("finished tables setup for security")
 
 
 @security.command()
