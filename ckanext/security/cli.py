@@ -15,11 +15,11 @@ def security():
     pass
 
 
-@security.command()
-def migrate():
-    """
-    Create the database table to support Time-based One Time Password login
-    """
+#@security.command()
+#def migrate():
+    #"""
+    #Create the database table to support Time-based One Time Password login
+    #"""
     # print("Migrating database for security")
     # db_setup()
     # print("finished tables setup for security")
