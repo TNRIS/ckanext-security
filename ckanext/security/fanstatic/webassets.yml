@@ -1,5 +1,7 @@
 mfa_login:  # name of the asset
-  output: security/mfa-login.js  # actual path, where the generated file will be stored
+  filters: rjsmin
+  #output: security/mfa-login.js  # actual path, where the generated file will be stored
+  output: security/%(version)s-mfa-login.js
   extra:
     preload:
       - base/main
@@ -7,7 +9,9 @@ mfa_login:  # name of the asset
     - qrious.js
     - login_ajax.js
 mfa_configure:
-  output: security/mfa-configure.js  # actual path, where the generated file will be stored
+  filters: rjsmin
+  #output: security/mfa-configure.js  # actual path, where the generated file will be stored
+  output: security/%(version)s-mfa-configure.js
   extra:
     preload:
       - base/main
