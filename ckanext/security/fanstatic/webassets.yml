@@ -1,7 +1,7 @@
 mfa_login:  # name of the asset
   filters: rjsmin
   #output: security/mfa-login.js  # actual path, where the generated file will be stored
-  output: security/%(version)s-mfa-login.js
+  output: ckanext-security/%(version)s-mfa-login.js
   extra:
     preload:
       - base/main
@@ -11,7 +11,7 @@ mfa_login:  # name of the asset
 mfa_configure:
   filters: rjsmin
   #output: security/mfa-configure.js  # actual path, where the generated file will be stored
-  output: security/%(version)s-mfa-configure.js
+  output: ckanext-security/%(version)s-mfa-configure.js
   extra:
     preload:
       - base/main
