@@ -35,10 +35,16 @@ def user_password_validator(key, data, errors, context):
         ]
 
         if username in password_fields:
-            errors[key].append(_(SAME_USERNAME_PASSWORD_ERROR))
+            # Setting errors[] winds up displaying JSON as the error message
+            #errors[key].append(_(SAME_USERNAME_PASSWORD_ERROR))
+            # This fixes it
+            raise ValueError(_(SAME_USERNAME_PASSWORD_ERROR))
 
         if len(value) < min_password_length:
-            errors[key].append(_(MIN_LEN_ERROR).format(min_password_length))
+            # Setting errors[] winds up displaying JSON as the error message
+            #errors[key].append(_(MIN_LEN_ERROR).format(min_password_length))
+            # This fixes it
+            raise ValueError(_(MIN_LEN_ERROR).format(min_password_length))
 
         if nzism_compliant:
             # NZISM compliant password rules
@@ -49,7 +55,10 @@ def user_password_validator(key, data, errors, context):
                 any(x in string.punctuation for x in value)
             ]
             if sum(rules) < 3:
-                errors[key].append(_(COMPLEXITY_ERROR))
+                # Setting errors[] winds up displaying JSON as the error message
+                #errors[key].append(_(COMPLEXITY_ERROR))
+                # This fixes it
+                raise ValueError(_(COMPLEXITY_ERROR))
 
 
 def old_username_validator(key, data, errors, context):
