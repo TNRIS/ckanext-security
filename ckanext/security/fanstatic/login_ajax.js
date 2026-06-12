@@ -11,6 +11,7 @@
 
     new QRious({
       size: 250,
+      foreground: "#206b82",
       element: $('#qr-code-container')[0],
       value: loginState.totpChallengerURI
     })

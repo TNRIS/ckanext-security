@@ -10,6 +10,7 @@
         }
         new QRious({
             size: 250,
+            foreground: "#206b82",
             element: qrRenderTarget,
             value: $(totpInput).val()
         })
